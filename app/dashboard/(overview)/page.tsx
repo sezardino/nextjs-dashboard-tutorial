@@ -5,19 +5,13 @@ import {
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
 import { Suspense } from "react";
-import { fetchCardData } from "../../lib/data";
 import CardWrapper from "../../ui/dashboard/cards";
 import { default as LatestInvoices } from "../../ui/dashboard/latest-invoices";
 import RevenueChart from "../../ui/dashboard/revenue-chart";
 
-export default async function Page() {
-  const {
-    numberOfInvoices,
-    numberOfCustomers,
-    totalPaidInvoices,
-    totalPendingInvoices,
-  } = await fetchCardData();
+export const experimental_ppr = true;
 
+export default async function Page() {
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
